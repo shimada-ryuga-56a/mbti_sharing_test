@@ -2,10 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,  autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -19,6 +23,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_id %><br />
+    <%= f.text_field :profile_id, pattern: "[a-zA-Z0-9]{5,}", title: "Please enter at least 5 alphanumeric characters", autocomplete: "profile_id" %>
   </div>
 
   <div class="actions">
