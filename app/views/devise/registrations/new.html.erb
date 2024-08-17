@@ -1,16 +1,16 @@
 <div class="m-10">
-  <h1 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">ユーザー登録</h1>
+  <h2 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">ユーザー登録</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :ユーザー名 %><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      <%= f.text_field :username, class: "w-full h-10 mb-5", autofocus: true, autocomplete: "username" %>
     </div>
 
     <div class="field">
       <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email,  autocomplete: "email" %>
+      <%= f.email_field :email, class: "w-full h-10 mb-5",  autocomplete: "email" %>
     </div>
 
     <div class="field">
@@ -18,17 +18,17 @@
     <% if @minimum_password_length %>
     <em>（<%= @minimum_password_length %>文字以上で入力してください）</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, class: "w-full h-10 mb-5", autocomplete: "new-password" %>
     </div>
 
     <div class="field">
       <%= f.label :パスワード確認 %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, class: "w-full h-10 mb-5", autocomplete: "new-password" %>
     </div>
 
     <div class="field">
       <%= f.label :ユーザーID %><br />
-      <%= f.text_field :profile_id, pattern: "[a-zA-Z0-9]{5,}", title: "Please enter at least 5 alphanumeric characters", autocomplete: "profile_id" %>
+      <%= f.text_field :profile_id, pattern: "[a-zA-Z0-9]{5,}", class: "w-full h-10 mb-5", title: "Please enter at least 5 alphanumeric characters", autocomplete: "profile_id" %>
     </div>
 
     <div class="actions my-5 bg-cyan-600 text-white rounded w-20 h-10 md:text-base flex items-center justify-center">

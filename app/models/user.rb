@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :encrypted_password, presence: true
   validates :email, presence: true
+
+  mount_uploader :user_image, UserImageUploader
 end
