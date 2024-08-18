@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :ensure_user, only: [:edit]
   
   def index
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).order("created_at desc")
   end
 
   def mypage

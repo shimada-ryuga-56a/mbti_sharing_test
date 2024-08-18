@@ -1,0 +1,4 @@
+<%= search_form_for @q do |f| %>
+  <%= f.search_field :username_or_profile_id_cont, class: 'form-control', placeholder: '検索ワード' %>
+  <%= f.submit '検索', class: 'btn btn-primary' %>
+<% end %>

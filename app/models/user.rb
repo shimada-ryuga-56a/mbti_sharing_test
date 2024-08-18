@@ -55,4 +55,13 @@ class User < ApplicationRecord
       self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
     end
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["username", "profile_id"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["active_relationships", "followers", "followings", "passive_relationships"]
+  end
+
 end
