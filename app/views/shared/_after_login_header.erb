@@ -1,7 +1,7 @@
 <nav class="w-full bg-cyan-600" data-controller="dropdown">
   <div class="flex justify-between items-center max-w-5xl mx-auto h-20">
     <div class="mx-8 md:text-3xl">
-      <%= link_to "MBTI交換アプリ", top_path, class: "text-white" %>
+      <%= link_to "MBTI交換アプリ", users_path, class: "text-white" %>
     </div>
     <div class="relative inline-block text-left mr-8">
       <div>
@@ -17,7 +17,7 @@
         <div class="py-1" role="none">
           <a href="/mypage" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">マイページ</a>
           <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">フォロー一覧</a>
-          <a href="/top" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">ユーザー一覧</a>
+          <a href="/users" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">ユーザー一覧</a>
           <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">リスト</a>
           <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "block px-4 py-2 text-sm text-gray-700" %>
         </div>

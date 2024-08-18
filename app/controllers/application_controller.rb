@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
   # ログイン後のリダイレクト先
   def after_sign_in_path_for(resource_or_scope)
-    top_path  #ここを好きなパスに変更
+    users_path  #ここを好きなパスに変更
   end
 
   # ログアウト後のリダイレクト先

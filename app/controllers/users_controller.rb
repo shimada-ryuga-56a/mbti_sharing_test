@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_user, only: [:edit]
-  def index; end
+  
+  def index
+    @users = User.all
+  end
 
   def mypage
     @user = current_user
