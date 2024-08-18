@@ -1,2 +1,0 @@
-class Mbti < ApplicationRecord
-end

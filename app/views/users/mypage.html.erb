@@ -9,12 +9,18 @@
         <h1 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 font-bold md:text-5xl lg:text-6xl dark:text-black"><%= @user.username %></h1>
         <h3 class="text-2xl">（<%= @user.profile_id %>）</h3>
       </div>
-      <h3 class="mb-4 text-3xl font-bold  dark:text-black">建築家(INTJ-A/INTJ-J)</h3>
+      <h3 class="mb-4 text-3xl font-bold  dark:text-black">
+        <% unless @user.mbti==""||@user.mbti==nil %>
+          <%= @user.mbti %>
+        <% else %>
+          <%= link_to "MBTIを登録しましょう！", edit_user_registration_path %>
+        <% end %>  
+      </h3>
       <h3 class="text-2xl">
-        <% unless @user.comment=="" %>
+        <% unless @user.comment==""||@user.comment==nil %>
           <%= @user.comment %>
         <% else %>
-          コメントを登録しましょう！
+          <%= link_to "コメントを登録しましょう！", edit_user_registration_path %>
         <% end %>
       </h3>
     </div>

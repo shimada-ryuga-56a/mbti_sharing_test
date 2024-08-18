@@ -23,7 +23,12 @@
       <%= f.text_field :profile_id, autofocus: true, class: "w-full h-10 mb-5", autocomplete: "profile_id" %>
     </div>
 
-    <div class="mb-3">
+    <div class="field">
+      <%= f.label :MBTI %><br />
+      <%= f.select :mbti, User::MBTI_OPTIONS, { prompt: 'MBTIを選択してください' }, { include_blank: true } %>
+    </div>
+
+    <div class="mb-3 mt-5">
       <%= f.label :プロフィール写真 %><br />
       <%= f.file_field :user_image, class: "form-control", class: "w-full h-10", accept: 'image/*' %>
       <%= f.hidden_field :user_image_cache %>
@@ -34,7 +39,7 @@
         <%= f.submit "完了" %>
       </div>
       <div class="actions my-5 bg-gray-400 text-white rounded w-20 h-10 md:text-base flex items-center justify-center">
-        <%= link_to "戻る", :back %>    
+        <%= link_to "戻る", :back %>
       </div>
     </div>
   <% end %>
