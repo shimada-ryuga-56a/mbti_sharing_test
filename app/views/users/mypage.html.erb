@@ -30,4 +30,9 @@
     <%= link_to "編集", edit_user_registration_path %>
   </div>
 
+  <div class="items-center">
+    <h3 class="text-2xl pb-5">自分のMBTIをシェアしましょう！</h3>
+    <%= qrcode current_user.id, 8 %>
+  </div>
+
 </div>

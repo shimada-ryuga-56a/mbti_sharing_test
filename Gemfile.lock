@@ -101,6 +101,7 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
+    chunky_png (1.4.0)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -239,6 +240,13 @@ GEM
     rmagick (6.0.1)
       observer (~> 0.1)
       pkg-config (~> 1.4)
+    rqrcode (2.2.0)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
+    rqrcode_png (0.1.5)
+      chunky_png
+      rqrcode
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
@@ -309,6 +317,7 @@ DEPENDENCIES
   bootsnap
   capybara
   carrierwave (= 2.2.2)
+  chunky_png
   debug
   devise
   importmap-rails
@@ -317,6 +326,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
   rmagick
+  rqrcode
+  rqrcode_png
   selenium-webdriver
   sprockets-rails
   stimulus-rails
