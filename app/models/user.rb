@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_save :set_default_user_image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -18,4 +20,12 @@ class User < ApplicationRecord
   validates :mbti, inclusion: { in: MBTI_OPTIONS }, allow_blank: true
 
   mount_uploader :user_image, UserImageUploader
+
+  private
+
+  def set_default_user_image
+    if user_image.blank?
+      self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
+    end
+  end
 end
