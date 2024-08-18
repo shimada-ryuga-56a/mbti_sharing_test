@@ -1,0 +1,24 @@
+<div class="m-10 justify-between">
+  <div class="p-10 bg-white rounded md:text-base flex items-center">
+    <div class="card">
+      <%= image_tag user.user_image_url, class: "card-img-top border-4 border-black rounded", size: "250x250" %>
+    </div>
+    <div class="mx-10">
+      <div class="flex items-center">
+        <h1 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 font-bold md:text-5xl dark:text-black"><%= user.username %></h1>
+        <h3 class="text-2xl">（<%= user.profile_id %>）</h3>
+      </div>
+      <h3 class="mb-4 text-3xl font-bold  dark:text-black">
+        <% unless user.mbti==""||user.mbti==nil %>
+          <%= user.mbti %>
+        <% else %>
+          MBTI未登録
+        <% end %>  
+      </h3>
+      <h3 class="text-2xl">
+        <%= user.comment %>
+      </h3>
+      <td><%= render "relationships/btn", user: user, options: { class: "follow-link" } %></td>
+    </div>
+  </div>
+</div>

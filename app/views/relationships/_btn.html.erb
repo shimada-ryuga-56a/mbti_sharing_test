@@ -1,0 +1,11 @@
+<% if current_user != user %>
+  <% if current_user.following?(user) %>
+    <div class="actions px-3 py-2 border-2 w-40 border-black text-black rounded md:text-base flex items-center justify-center">
+      <%= link_to "フォロー中", user_relationships_path(user.id), data: { "turbo-method": :delete } %>
+    </div>
+  <% else %>
+    <div class="actions px-3 py-2 w-40 bg-cyan-600 text-white rounded md:text-base flex items-center justify-center">
+      <%= link_to "フォローする", user_relationships_path(user.id), data: { "turbo-method": :post } %>
+    </div>
+  <% end %>
+<% end %>
