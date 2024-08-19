@@ -3,9 +3,11 @@
 
   <%= render partial: 'search', q: @q, url: users_path %>
 
-  <div class="my-8 mx-10 px-3 py-2 bg-cyan-600 text-white rounded md:text-base flex items-center justify-center">
-    <%= link_to "フォロー中のユーザーを見る", user_followings_path(user_id: current_user.id) %>
-  </div>
+  <a href="<%= users_path %>">
+    <div class="my-8 mx-10 px-3 py-2 bg-cyan-600 text-white rounded md:text-base flex items-center justify-center">
+      <%= link_to "フォロー中のユーザーを見る", user_followings_path(user_id: current_user.id) %>
+    </div>
+  </a>
 
   <%= render @users %>
 </div>
