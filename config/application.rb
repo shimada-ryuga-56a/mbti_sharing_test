@@ -24,6 +24,8 @@ module MbtiSharingTest
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.i18n.default_locale = :ja
+
     config.generators do |g|
       g.helper false             # helper ファイルを作成しない
       g.test_framework false     # test ファイルを作成しない
