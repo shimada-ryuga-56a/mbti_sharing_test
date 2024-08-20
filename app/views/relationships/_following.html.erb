@@ -1,0 +1,1 @@
+<%= link_to "フォロー中", user_relationships_path(user.id), class: "actions px-3 py-2 border-2 w-40 border-black text-black rounded md:text-base flex items-center justify-center", id: "following-button-for-user-#{user.id}", data: { "turbo-method": :delete } %>
