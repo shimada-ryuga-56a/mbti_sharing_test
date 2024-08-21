@@ -10,8 +10,8 @@ ja:
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
         email: Eメール
-        profile_id: プロフィールID
-        encrypted_password: 暗号化パスワード
+        profile_id: ユーザーID
+        encrypted_password: パスワード確認
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
