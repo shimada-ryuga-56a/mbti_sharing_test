@@ -11,12 +11,12 @@ class User < ApplicationRecord
   'ISTP（巨匠）', 'ISFP（冒険家）', 'ESFP（エンターテイナー）', 'ESTP（起業家）'
   ]
 
+  validates :username, presence: true
+  validates :email, presence: true
+  validates :encrypted_password, presence: true
   validates :profile_id, presence: true, uniqueness: true,
                       format: { with: /\A[a-zA-Z0-9]+\z/, message: "英数字のみ有効です。" },
                       length: { minimum: 5 }
-  validates :username, presence: true
-  validates :encrypted_password, presence: true
-  validates :email, presence: true
   validates :mbti, inclusion: { in: MBTI_OPTIONS }, allow_blank: true
 
   mount_uploader :user_image, UserImageUploader
