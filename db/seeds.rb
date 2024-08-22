@@ -8,3 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+100.times do |n|
+  User.create!(
+    email: "example#{n + 1}@gmail.com",
+    password: "foobar",
+    username: "テスト太郎#{n + 1}",
+    profile_id: "test00#{n + 1}"
+  )
+end

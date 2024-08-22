@@ -1,1 +1,1 @@
-<%= link_to "フォローする", user_relationships_path(user.id), class: "actions px-3 py-2 border-2 w-40 border-black text-black rounded md:text-base flex items-center justify-center", id: "follow-button-for-user-#{user.id}", data: { "turbo-method": :post } %>
+<%= link_to "フォローする", user_relationships_path(user.id), class: "p-2 rounded border-2 border-black", id: "follow-button-for-user-#{user.id}", data: { "turbo-method": :post } %>

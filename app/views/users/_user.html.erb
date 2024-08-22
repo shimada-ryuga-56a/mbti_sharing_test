@@ -1,14 +1,12 @@
 <a href="<%= user_path(user) %>">
-  <div class="m-10 justify-between">
-    <div class="p-10 bg-white rounded md:text-base flex items-center">
+  <div class="m-10">
+    <div class="p-10 bg-white rounded md:flex items-center">
       <div class="card">
-        <%= image_tag user.user_image_url, class: "card-img-top border-4 border-black rounded", size: "250x250" %>
+        <%= image_tag user.user_image_url, class: "object-cover h-auto w-auto border-4 border-black rounded" %>
       </div>
-      <div class="mx-10">
-        <div class="flex items-center">
-          <h1 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 font-bold md:text-5xl dark:text-black"><%= user.username %></h1>
-          <h3 class="text-2xl">（<%= user.profile_id %>）</h3>
-        </div>
+      <div class="ml-10 md:w-3/4">
+        <h1 class="mb-2 text-4xl leading-none tracking-tight text-gray-900 font-bold md:text-5xl dark:text-black"><%= user.username %></h1>
+        <h3 class="text-2xl">（<%= user.profile_id %>）</h3>
         <h3 class="mb-4 text-3xl font-bold  dark:text-black">
           <% unless user.mbti==""||user.mbti==nil %>
             <%= user.mbti %>
@@ -17,7 +15,17 @@
           <% end %>  
         </h3>
         <h3 class="text-2xl">
-          <%= user.comment %>
+          <% if user.comment && user.comment.length > 30 %>
+            <div class="truncated">
+              <%= user.comment.truncate(30) %>  
+              <p class="text-sm see-more">&lt;もっと見る&gt;</p>
+            </div>
+            <div class="untruncated" style="display: none">
+              <%= user.comment %>
+            </div>
+          <% else %>
+            <%= user.comment %>
+          <% end %>
         </h3>
         <td><%= render 'relationships/btn', {user: user} %></td>
       </div>
