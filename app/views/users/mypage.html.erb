@@ -1,34 +1,14 @@
 <div class="m-10">
-    <div class="p-10 bg-white rounded md:flex items-center">
-      <div class="card">
-        <%= image_tag @user.user_image_url, class: "object-cover h-auto w-auto border-4 border-black rounded" %>
-      </div>
-      <div class="ml-10 md:w-3/4">
-        <h1 class="mb-2 text-4xl leading-none tracking-tight text-gray-900 font-bold md:text-5xl dark:text-black"><%= @user.username %></h1>
-        <h3 class="text-2xl">（<%= @user.profile_id %>）</h3>
-        <h3 class="mb-4 text-3xl font-bold  dark:text-black">
-        <% unless @user.mbti==""||@user.mbti==nil %>
-          <%= @user.mbti %>
-        <% else %>
-          <%= link_to "MBTIを登録しましょう！", edit_user_registration_path %>
-        <% end %>  
-      </h3>
-      <h3 class="text-2xl">
-        <% unless @user.comment==""||@user.comment==nil %>
-          <%= @user.comment %>
-        <% else %>
-          <%= link_to "コメントを登録しましょう！", edit_user_registration_path %>
-        <% end %>
-      </h3>
-    </div>
-  </div>
+
+  <h2 class="mb-4 text-4xl leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">マイページ</h1>
+  <%= render "users/user_detail",  {user: @user} %>  
   
   <div class="actions my-5 bg-cyan-600 text-white rounded w-20 h-10 mr-5 md:text-base flex items-center justify-center">
     <%= link_to "編集", edit_user_registration_path %>
   </div>
 
   <div class="items-center">
-    <h3 class="text-2xl pb-5">自分のMBTIをシェアしましょう！</h3>
+    <h3 class="text-lg sm:text-2xl pb-5">自分のMBTIをシェアしましょう！</h3>
     <%= qrcode current_user.id, 8 %>
   </div>
 
