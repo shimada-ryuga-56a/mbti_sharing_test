@@ -1,5 +1,4 @@
-<a href="<%= user_path(user) %>">
-  <div class="m-10">
+<div class="m-10">
     <div class="p-10 bg-white rounded md:flex items-center">
       <div class="card">
         <%= image_tag user.user_image_url, class: "object-cover h-auto w-auto border-4 border-black rounded" %>
@@ -15,10 +14,9 @@
           <% end %>  
         </h3>
         <h3 class="text-2xl">
-          <%= render 'users/comment', {user: user} %>
+          <%= user.comment %>
         </h3>
         <td><%= render 'relationships/btn', {user: user} %></td>
       </div>
     </div>
   </div>
-</a>

@@ -1,0 +1,5 @@
+<% if user.comment && user.comment.length > 30 %>
+  <%= render 'users/short_comment', {user: user} %>
+<% else %>
+  <%= user.comment %>
+<% end %>
