@@ -18,6 +18,12 @@
       <% else %>
         <%= render 'shared/before_login_header' %>
       <% end %>
+      <% if notice %>
+          <p class="notice p-5 rounded text-sm lg:text-2xl bg-green-400"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert p-5 rounded text-sm lg:text-2xl bg-red-400"><%= alert %></p>
+        <% end %>
       <div class="max-w-5xl mx-auto">
         <%= yield %>
       </div>

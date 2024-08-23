@@ -1,9 +1,9 @@
 <nav class="w-full bg-cyan-600" data-controller="dropdown">
-  <div class="flex justify-between items-center max-w-5xl mx-auto h-20">
-    <div class="mx-8 md:text-3xl">
+  <div class="flex justify-between items-center mx-auto py-5">
+    <div class="mx-6 md:text-3xl">
       <%= link_to "MBTI交換アプリ", users_path, class: "text-white" %>
     </div>
-    <div class="relative inline-block text-left mr-8">
+    <div class="relative inline-block text-left mr-6">
       <div>
         <button type="button" data-action="click->dropdown#toggle" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-4 py-3  text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
           メニュー
@@ -17,7 +17,20 @@
         <div class="py-1" role="none">
           <a href="/mypage" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">マイページ</a>
           <%= link_to "フォロー一覧", user_followings_path(user_id: current_user.id), class: "block px-4 py-2 text-sm text-gray-700", role: "menuitem", tabindex: "-1", id: "menu-item-1" %>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">リスト</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="modalOpen">リスト</a>
+
+          <div class="hidden fixed left-0 top-0 h-full w-full bg-gray-400/50 z-10" id="modalSelf">
+            <div class="modal-content bg-[#f4f4f4] my-[15%] mx-auto w-[500px] shadow-[0_2px_7px_rgba(0,0,0)] animate-popup">
+              <div class="modal-header bg-[#eb6100] py-[3px] px-[15px] flex justify-between">
+                 <h1 class="my-[10px]">たんま</h1>
+                <span class="modalClose text-xl cursor-pointer">&times;</span>
+              </div>
+              <div class="modal-body py-[15px] px-[25px]">
+                <p>リストまだ作成中です</p>
+              </div>
+            </div>
+          </div>
+
           <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "block px-4 py-2 text-sm text-gray-700" %>
         </div>
       </div>

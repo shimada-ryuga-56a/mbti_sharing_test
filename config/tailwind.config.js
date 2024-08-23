@@ -9,8 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      keyframes: {
+        modalPopup: {
+          from: { transform: "translateY(150%)", opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+      animation: {
+        popup: "modalPopup 1.1s",
       },
     },
   },

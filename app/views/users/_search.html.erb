@@ -1,0 +1,6 @@
+<%= search_form_for @q do |f| %>
+  <div class="flex items-center justify-center">
+    <%= f.search_field :username_or_profile_id_cont, class: 'form-control w-full px-3 py-2 rounded', placeholder: 'ユーザー名orプロフィールID' %>
+    <%= f.submit '検索', class: 'btn btn-primary ml-3 px-3 py-2 bg-cyan-600 text-white rounded md:text-base' %>
+  </div>
+<% end %>

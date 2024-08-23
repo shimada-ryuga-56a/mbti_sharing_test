@@ -32,6 +32,10 @@ gem "jbuilder"
 gem 'devise'  
 gem 'carrierwave', '2.2.2'
 gem 'rmagick'
+gem "rqrcode"
+gem "rqrcode_png"
+gem "chunky_png"
+gem 'ransack'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
