@@ -26,11 +26,6 @@
       <%= f.password_field :password_confirmation, class: "w-full h-10 mb-5", autocomplete: "new-password" %>
     </div>
 
-    <div class="field">
-      <%= f.label :ユーザーID %><br />
-      <%= f.text_field :profile_id, pattern: "[a-zA-Z0-9]{5,}", class: "w-full h-10 mb-5", title: "Please enter at least 5 alphanumeric characters", autocomplete: "profile_id" %>
-    </div>
-
     <div class="actions my-5 bg-cyan-600 text-white rounded w-20 h-10 md:text-base flex items-center justify-center">
       <%= f.submit "登録" %>
     </div>

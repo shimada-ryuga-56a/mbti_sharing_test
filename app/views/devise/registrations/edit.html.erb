@@ -3,10 +3,6 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="field">
-      <%= f.label :パスワード %><br />
-      <%= f.password_field :current_password, class: "w-full h-10 mb-5", autocomplete: "current-password" %>
-    </div>
 
     <div class="field">
       <%= f.label :ユーザー名 %><br />
@@ -19,11 +15,6 @@
     </div>
 
     <div class="field">
-      <%= f.label :プロフィールID %><br />
-      <%= f.text_field :profile_id, autofocus: true, class: "w-full h-10 mb-5", autocomplete: "profile_id" %>
-    </div>
-
-    <div class="field">
       <%= f.label :MBTI %><br />
       <%= f.select :mbti, User::MBTI_OPTIONS, { prompt: 'MBTIを選択してください' }, { include_blank: true } %>
     </div>
@@ -32,6 +23,11 @@
       <%= f.label :プロフィール写真 %><br />
       <%= f.file_field :user_image, class: "form-control", class: "w-full h-10", accept: 'image/*' %>
       <%= f.hidden_field :user_image_cache %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %><br />
+      <%= f.password_field :current_password, class: "w-full h-10 mb-5", autocomplete: "current-password" %>
     </div>
 
     <div class="flex">
