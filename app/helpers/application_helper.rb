@@ -6,7 +6,7 @@ module ApplicationHelper
   def qrcode(id, size)
     if Rails.env.production?
       # 本番環境（Heroku）での処理
-      qrcode = RQRCode::QRCode.new("https://mbti-sharing-test.onrender.com/users/#{id}")
+      qrcode = RQRCode::QRCode.new("https://mbti-sharing.onrender.com/users/#{id}")
     elsif Rails.env.development?
       # 開発環境での処理
       qrcode = RQRCode::QRCode.new("http://localhost:3000/users/#{id}")

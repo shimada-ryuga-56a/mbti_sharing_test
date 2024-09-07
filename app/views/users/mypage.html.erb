@@ -9,7 +9,10 @@
 
   <div class="items-center">
     <h3 class="text-lg sm:text-2xl pb-5">自分のMBTIをシェアしましょう！</h3>
-    <%= qrcode current_user.id, 8 %>
+    <%= qrcode current_user.id, 6 %>
+    <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【#{ @user.username }さんがMBTIを登録しました！】%0a%0a私のMBTIは、#{ @user.mbti }です！%0a%0aMBTIシェアリングサービスで自分のMBTIを共有しましょう！", target: '_blank' do %>
+      <i class="fab fa-twitter"></i>
+    <% end %>
   </div>
 
 </div>

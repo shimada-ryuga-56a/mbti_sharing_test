@@ -36,6 +36,8 @@ gem "rqrcode"
 gem "rqrcode_png"
 gem "chunky_png"
 gem 'ransack'
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
