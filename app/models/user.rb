@@ -41,6 +41,7 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: user.id).destroy
   end
   
+  # 指定したユーザーをフォローしているかどうかを判定
   def following?(user)
     followings.include?(user)
   end
