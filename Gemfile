@@ -38,6 +38,8 @@ gem "chunky_png"
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
+gem "aws-sdk-s3", require: false
+gem 'fog-aws'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
