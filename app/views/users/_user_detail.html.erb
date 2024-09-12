@@ -1,8 +1,8 @@
 <div class="mb-10">
   <div class="p-10 bg-white rounded md:flex items-center">
     <% if user.image.attached? %>
-      <div class="card mb-10 md:mb-0 object-cover h-auto w-auto border-4 border-black rounded mx-auto">
-        <%= image_tag user.image.variant(resize: "200x200^", gravity: "center", crop: "200x200+0+0") %>
+      <div class="card">
+        <%= image_tag user.image.variant(resize: "200x200^", gravity: "center", crop: "200x200+0+0"), class: 'mb-10 md:mb-0 object-cover h-auto w-auto border-4 border-black rounded mx-auto' %>
       </div>
     <% end %>
     <div class="md:ml-10 md:w-3/4">
