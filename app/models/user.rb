@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save :set_default_user_image
+  # before_save :set_default_user_image
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -32,6 +32,7 @@ class User < ApplicationRecord
   
   # アイコン画像関連付け
   has_one_attached :image
+  validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'] }
 
   # 指定したユーザーをフォローする
   def follow(user)
@@ -50,11 +51,11 @@ class User < ApplicationRecord
 
   private
 
-  def set_default_user_image
-    if user_image.blank?
-      self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
-    end
-  end
+  # def set_default_user_image
+  #   if user_image.blank?
+  #     self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
+  #   end
+  # end
 
   def self.ransackable_attributes(auth_object = nil)
     ["username", "profile_id"]
