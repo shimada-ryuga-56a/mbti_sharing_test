@@ -8,7 +8,7 @@ local:
 
 google:
   service: GCS
-  project: {shimatama0329}
+  project: {My First Project}
   credentials:
     {
       "type": "service_account",
@@ -23,7 +23,7 @@ google:
       "client_x509_cert_url": "<%= Rails.application.credentials.dig(:google_cloud_storage, :client_x509_cert_url) %>",
       "universe_domain": "googleapis.com"
     }
-  bucket: {shimatama0329}
+  bucket: shimatama2024
 
 
 # amazon:
