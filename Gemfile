@@ -38,8 +38,6 @@ gem "chunky_png"
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
-gem "aws-sdk-s3", require: false
-gem 'fog-aws'
 gem 'activestorage-validator'
 gem 'mini_magick'
 gem "google-cloud-storage"
