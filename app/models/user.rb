@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save :set_default_user_image
+  # before_save :set_default_user_image
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -14,7 +14,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true
   validates :encrypted_password, presence: true
-  validates :profile_id, uniqueness: true
   validates :mbti, inclusion: { in: MBTI_OPTIONS }, allow_blank: true
 
   mount_uploader :user_image, UserImageUploader
@@ -31,6 +30,10 @@ class User < ApplicationRecord
   # フォロワーを取得
   has_many :followers, through: :passive_relationships, source: :follower
   
+  # アイコン画像関連付け
+  has_one_attached :image
+  validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'] }
+
   # 指定したユーザーをフォローする
   def follow(user)
     active_relationships.create(followed_id: user.id)
@@ -48,11 +51,11 @@ class User < ApplicationRecord
 
   private
 
-  def set_default_user_image
-    if user_image.blank?
-      self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
-    end
-  end
+  # def set_default_user_image
+  #   if user_image.blank?
+  #     self.user_image = File.open(Rails.root.join("app/assets/images/user_default.png"))
+  #   end
+  # end
 
   def self.ransackable_attributes(auth_object = nil)
     ["username", "profile_id"]
