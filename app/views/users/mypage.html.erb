@@ -12,5 +12,5 @@
     <%= qrcode current_user.id, 6 %>
   </div>
 
-  <%= link_to "Xでシェア", "https://twitter.com/share?url=https://mbti-sharing.onrender.com/#{ @user.id }&text=MBTIシェアできる神アプリ見つけたんだがwww%0a%0a", 
+  <%= link_to "Xでシェア", "https://twitter.com/share?url=https://mbti-sharing.onrender.com/users/#{ @user.id }&text=MBTIシェアできる神アプリ見つけたんだがwww%0a%0a", 
       class: "items-center mt-5 p-5 bg-cyan-600 text-white rounded", target: '_blank' %>
